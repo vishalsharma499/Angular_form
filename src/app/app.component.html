@@ -1,0 +1,122 @@
+<div class="container">
+  <h2 class="text-center">Student Form</h2>
+  <form (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+
+    <!-- Student Info Section -->
+    <div class="row">
+      <div class="col-md-6 form-group">
+        <label for="firstName" class="form-label">First Name:</label>
+        <input type="text" id="firstName" [(ngModel)]="student.firstName" name="firstName" class="form-control"
+          required placeholder="Enter First Name">
+      </div>
+
+      <div class="col-md-6 form-group">
+        <label for="lastName" class="form-label">Last Name:</label>
+        <input type="text" id="lastName" [(ngModel)]="student.lastName" name="lastName" class="form-control" required
+          placeholder="Enter Last Name">
+      </div>
+      <div class="col-md-6 form-group">
+        <label class="form-label">Gender:</label>
+        <div class="form-check">
+          <input type="radio" id="male" [(ngModel)]="student.gender" name="gender" value="Male" class="form-check-input"
+            required>
+          <label for="male" class="form-check-label">Male</label>
+        </div>
+        <div class="form-check">
+          <input type="radio" id="female" [(ngModel)]="student.gender" name="gender" value="Female" class="form-check-input"
+            required>
+          <label for="female" class="form-check-label">Female</label>
+        </div>
+      </div>
+
+      <div class="col-md-6 form-group">
+        <label for="previousSchool" class="form-label">Previous School:</label>
+        <input type="text" id="previousSchool" [(ngModel)]="student.previousSchool" name="previousSchool"
+          class="form-control" required placeholder="Enter Previous School">
+      </div>
+
+      <div class="col-md-6 form-group">
+        <label for="previousClass" class="form-label">Previous Class:</label>
+        <input type="text" id="previousClass" [(ngModel)]="student.previousClass" name="previousClass"
+          class="form-control" required placeholder="Enter Previous Class">
+      </div>
+
+      <div class="col-md-6 form-group">
+        <label for="previousClassName" class="form-label">Previous Class School Name:</label>
+        <input type="text" id="previousClassName" [(ngModel)]="student.previousClassName" name="previousClassName"
+          class="form-control" required placeholder="Enter Previous Class Name">
+      </div>
+
+      <!-- Student Contact Section -->
+      <div class="col-md-6 form-group">
+        <label for="mobileNumber" class="form-label">Mobile Number:</label>
+        <input type="text" id="mobileNumber" [(ngModel)]="student.mobileNumber" name="mobileNumber" class="form-control"
+          required placeholder="Enter Mobile Number">
+      </div>
+
+      <div class="col-md-6 form-group">
+        <label for="parentMobileNumber" class="form-label">Parent Mobile Number:</label>
+        <input type="text" id="parentMobileNumber" [(ngModel)]="student.parentMobileNumber" name="parentMobileNumber"
+          class="form-control" required placeholder="Enter Parent Mobile Number">
+      </div>
+
+      <div class="col-md-6 form-group">
+        <label for="address" class="form-label">Address:</label>
+        <input type="text" id="address" [(ngModel)]="student.address" name="address" class="form-control" required
+          placeholder="Enter Address">
+      </div>
+
+      <div class="col-md-6 form-group">
+        <label for="city" class="form-label">City:</label>
+        <input type="text" id="city" [(ngModel)]="student.city" name="city" class="form-control" required
+          placeholder="Enter City">
+      </div>
+
+      <div class="col-md-6 form-group">
+        <label for="state" class="form-label">State:</label>
+        <input type="text" id="state" [(ngModel)]="student.state" name="state" class="form-control" required
+          placeholder="Enter State">
+      </div>
+
+      <div class="col-md-6 form-group">
+        <label for="pincode" class="form-label">Pincode:</label>
+        <input type="text" id="pincode" [(ngModel)]="student.pincode" name="pincode" class="form-control" required
+          placeholder="Enter Pincode">
+      </div>
+
+      <div class="col-md-6 form-group">
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" id="email" [(ngModel)]="student.email" name="email" class="form-control" required
+          placeholder="Enter Email">
+      </div>
+
+      <!-- Student Academic Section -->
+      <div class="col-md-6 form-group">
+        <label for="previousGrades" class="form-label">Previous Grades:</label>
+        <input type="text" id="previousGrades" [(ngModel)]="student.previousGrades" name="previousGrades"
+          class="form-control" required placeholder="Enter Previous Grades">
+      </div>
+
+      <div class="col-md-6 form-group">
+        <label for="favouriteSubject" class="form-label">Favourite Subject:</label>
+        <input type="text" id="favouriteSubject" [(ngModel)]="student.favouriteSubject" name="favouriteSubject"
+          class="form-control" required placeholder="Enter Favourite Subject">
+      </div>
+
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <h2 class="mt-4 text-center">Student List</h2>
+  <ul class="list-group">
+    <li *ngFor="let student of students" class="list-group-item">
+      <strong>{{ student.firstName }} {{ student.lastName }}</strong><br>
+      Gender: {{ student.gender }}<br>
+      Previous School: {{ student.previousSchool }}<br>
+      Mobile Number: {{ student.mobileNumber }}<br>
+      Email: {{ student.email }}<br>
+      Previous Grades: {{ student.previousGrades }}<br>
+      Favourite Subject: {{ student.favouriteSubject }}
+    </li>
+  </ul>
+</div>
